@@ -25,24 +25,29 @@ int main()
 	{
 		NicknameMaker(fptr1,fptr2);
 		fclose(fptr1);
-		fclose(fptre2);	
-	}
-	
+		fclose(fptr2);	
+	} 
 	return reval;
 }
 
 
-void NicknameMaker(FILE *fin, FILE *fout)
+  void NicknameMaker(FILE *fin, FILE *fout)
 {
 	int Id, i, count = 0;
-	char FirstName[] = "", LastName[] = "", NickName[] = "";
+	char FirstName[20] = "", LastName[20] = "", NickName[10] = "";
+	char *First_ptr, *Last_ptr, *Nick_ptr;
 	while (fscanf(fin, "i", &Id) == 1)
 	{
 		count++;
 	}
 	for (i = 0; i < count; i++)
 	{
-		fscanf(fin, "%i %c %c",&Id,&FirstName,&LastName);
-		Nickname = 
+		while ((fscanf(fin, "%i %s %s",&Id, FirstName, LastName)) == 3)
+		{
+			NickName = FirstName[i] + FirstName[i+1] + FirstName[i+2] + LastName[i] + LastName[i+1] + LastName[i+2]
+			fprintf(fout, "%d	%c",Id,NickName);
+		}
 	}
-}
+} 
+
+
