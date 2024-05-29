@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 enum { SUCCESS, FAIL };
 
@@ -33,15 +34,14 @@ int main()
 
   void NicknameMaker(FILE *fin, FILE *fout)
   {
-  	char *ls, *fs, Nickname[7];
+  	char LastName[10], FirstName[10], NickName[7];
   	int Id;
-  	for (int i = 0; i < 10; i++)
+  	while ((fscanf(fin,"%i	%s	%s",&Id, FirstName, LastName)) != EOF)
   	{
-  		fscanf(fin,"%i %3s %3s",&Id,fs,ls);
-  		
-  		fprintf(fout,"%c %i\n",ls,Id);
+  		strncpy(NickName, FirstName, 3);
+  		strncpy(NickName + 3 , LastName, 3);
+  		NickName[6] = '\0';
+  		fprintf(fout,"%s %i\n",NickName, Id);
 	}
-  	fclose(fin);
-  	fclose(fout);
   }
 
