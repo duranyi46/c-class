@@ -1,9 +1,9 @@
-7833	Yiğit	Duran
+7833	Yigit	Duran
 1786	Sinem	Kiper
 7945	Efe	Duran
 4634	Defne	Duran
 9846	Sena	Kiper
-1536	Şefik	Duran
+1536	Sefik	Duran
 8946	Durdane	Duran
 4548	Canan	Kiper
 6843	Ali	Kiper

@@ -32,22 +32,16 @@ int main()
 
 
   void NicknameMaker(FILE *fin, FILE *fout)
-{
-	int Id, i, count = 0;
-	char FirstName[20] = "", LastName[20] = "", NickName[10] = "";
-	char *First_ptr, *Last_ptr, *Nick_ptr;
-	while (fscanf(fin, "i", &Id) == 1)
-	{
-		count++;
+  {
+  	char *ls, *fs, Nickname[7];
+  	int Id;
+  	for (int i = 0; i < 10; i++)
+  	{
+  		fscanf(fin,"%i %3s %3s",&Id,fs,ls);
+  		
+  		fprintf(fout,"%c %i\n",ls,Id);
 	}
-	for (i = 0; i < count; i++)
-	{
-		while ((fscanf(fin, "%i %s %s",&Id, FirstName, LastName)) == 3)
-		{
-			NickName = FirstName[i] + FirstName[i+1] + FirstName[i+2] + LastName[i] + LastName[i+1] + LastName[i+2]
-			fprintf(fout, "%d	%c",Id,NickName);
-		}
-	}
-} 
-
+  	fclose(fin);
+  	fclose(fout);
+  }
 
